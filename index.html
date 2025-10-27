@@ -113,11 +113,12 @@
         <pre class="line-numbers">
           <code class="language-javascript">//Bài 4
           console.log("Bài 4: ");
-          const fullName = "     manchester united club  ";
+          const fullName = "     manchester    united      club  ";
           const fullNameTrim = fullName.trim();
           let fullNameTrimLength = fullNameTrim.length;
           let standardFullName = "";
           for(let i = 0; i < fullNameTrimLength; i++) {
+            if(fullNameTrim[i] === " " && fullNameTrim[i - 1] === " ") continue;
             if(i === 0 || fullNameTrim[i - 1] === " ") {
               standardFullName += fullNameTrim[i].toUpperCase();
               continue;
@@ -174,6 +175,7 @@
             let lastWord = strTrim.slice(indexLastWhiteSpace + 1);
             reverseStr += lastWord;
             for(let i = indexFirstWhiteSpace; i <= indexLastWhiteSpace; i++) {
+              if(strTrim[i] === " " && strTrim[i - 1] === " ") continue;
               reverseStr += strTrim[i];
             }
             reverseStr += firstWord;
