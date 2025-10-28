@@ -65,8 +65,8 @@ console.log("=====================");
 
 //Bài 4
 console.log("Bài 4: ");
-const fullName = "     manchester    united      club  ";
-const fullNameTrim = fullName.trim();
+const fullName = "     manCHESter    united      club  ";
+const fullNameTrim = fullName.trim().toLowerCase();
 let fullNameTrimLength = fullNameTrim.length;
 let standardFullName = "";
 for(let i = 0; i < fullNameTrimLength; i++) {
@@ -83,23 +83,19 @@ console.log("=====================");
 
 //Bài 5
 console.log("Bài 5: ");
-function checkUpperCase(str) {
-  if(typeof str !== "string" || str.trim() === "") return "Đầu vào không hợp lệ";
-  let strLength = str.length;
-  for(let i = 0; i < strLength; i++) {
-    if(str.charCodeAt(i) < 65 || str.charCodeAt(i) > 90) {
-      return false;
-    }
-  }
-  return true;
+function checkUpperCase(str, language = "vi-VN") {
+  let isValidStr = typeof str == "string" && str.trim();
+  let isValidLanguage = typeof language == "string" && language.trim();
+  if(!isValidStr || !isValidLanguage) return false;
+  return str === str.toLocaleUpperCase(language);
 }
 
-console.log(checkUpperCase("MANCHESTER"));
+console.log(checkUpperCase("   Á   "));
 console.log("=====================");
 
 //Bài 6
 console.log("Bài 6: ");
-const str = "Manchester United Club";
+const str = "    Manchester      United Club";
 function reverseWord(str) {
   if(typeof str !== "string" || str.trim() === "") return "Đầu vào không hợp lệ";
   let reverseStr = "";
@@ -121,6 +117,4 @@ function reverseWord(str) {
 }
 
 console.log(reverseWord(str));
-
-
 
