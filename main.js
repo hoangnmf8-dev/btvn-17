@@ -115,6 +115,6 @@ function reverseWord(str) {
   reverseStr += firstWord;
   return reverseStr;
 }
-
+//Có thể chuẩn hóa thêm hoa thường nếu bài yêu cầu
 console.log(reverseWord(str));
 
