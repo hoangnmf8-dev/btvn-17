@@ -84,8 +84,8 @@ console.log("=====================");
 //Bài 5
 console.log("Bài 5: ");
 function checkUpperCase(str, language = "vi-VN") {
-  let isValidStr = typeof str == "string" && str.trim();
-  let isValidLanguage = typeof language == "string" && language.trim();
+  let isValidStr = typeof str === "string" && str.trim();
+  let isValidLanguage = typeof language === "string" && language.trim();
   if(!isValidStr || !isValidLanguage) return false;
   return str === str.toLocaleUpperCase(language);
 }
@@ -117,4 +117,3 @@ function reverseWord(str) {
 }
 //Có thể chuẩn hóa thêm hoa thường nếu bài yêu cầu
 console.log(reverseWord(str));
-
